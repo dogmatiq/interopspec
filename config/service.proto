@@ -3,10 +3,7 @@ package dogma.interop.v1.config;
 
 option go_package = "github.com/dogmatiq/interopspec/config";
 
-// TO-DO: investigate the possibility to specify fully qualified path to the
-// file. See the issue for details:
-// https://github.com/make-files/issues/issues/51.
-import "config/types.proto";
+import "github.com/dogmatiq/interopspec/config/types.proto";
 
 // Config is a service for inspecting the configuration of Dogma applications
 // hosted by the engine on the server.

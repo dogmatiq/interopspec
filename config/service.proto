@@ -24,7 +24,3 @@ message ListApplicationIdentitiesResponse { repeated Identity identities = 1; }
 message ListApplicationsRequest {}
 
 message ListApplicationsResponse { repeated Application applications = 1; }
-
-message WatchRequest {}
-
-message WatchResponse {}

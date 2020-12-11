@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.14.0
-// source: config/types.proto
+// source: github.com/dogmatiq/interopspec/config/types.proto
 
 package config
 
@@ -63,11 +63,11 @@ func (x MessageRole) String() string {
 }
 
 func (MessageRole) Descriptor() protoreflect.EnumDescriptor {
-	return file_config_types_proto_enumTypes[0].Descriptor()
+	return file_github_com_dogmatiq_interopspec_config_types_proto_enumTypes[0].Descriptor()
 }
 
 func (MessageRole) Type() protoreflect.EnumType {
-	return &file_config_types_proto_enumTypes[0]
+	return &file_github_com_dogmatiq_interopspec_config_types_proto_enumTypes[0]
 }
 
 func (x MessageRole) Number() protoreflect.EnumNumber {
@@ -76,7 +76,7 @@ func (x MessageRole) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use MessageRole.Descriptor instead.
 func (MessageRole) EnumDescriptor() ([]byte, []int) {
-	return file_config_types_proto_rawDescGZIP(), []int{0}
+	return file_github_com_dogmatiq_interopspec_config_types_proto_rawDescGZIP(), []int{0}
 }
 
 // HandlerType is a protocol buffers representation of the configkit.HandlerType
@@ -120,11 +120,11 @@ func (x HandlerType) String() string {
 }
 
 func (HandlerType) Descriptor() protoreflect.EnumDescriptor {
-	return file_config_types_proto_enumTypes[1].Descriptor()
+	return file_github_com_dogmatiq_interopspec_config_types_proto_enumTypes[1].Descriptor()
 }
 
 func (HandlerType) Type() protoreflect.EnumType {
-	return &file_config_types_proto_enumTypes[1]
+	return &file_github_com_dogmatiq_interopspec_config_types_proto_enumTypes[1]
 }
 
 func (x HandlerType) Number() protoreflect.EnumNumber {
@@ -133,7 +133,7 @@ func (x HandlerType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use HandlerType.Descriptor instead.
 func (HandlerType) EnumDescriptor() ([]byte, []int) {
-	return file_config_types_proto_rawDescGZIP(), []int{1}
+	return file_github_com_dogmatiq_interopspec_config_types_proto_rawDescGZIP(), []int{1}
 }
 
 // Identity is a protocol buffers representation of the configkit.Identity type.
@@ -151,7 +151,7 @@ type Identity struct {
 func (x *Identity) Reset() {
 	*x = Identity{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_config_types_proto_msgTypes[0]
+		mi := &file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -164,7 +164,7 @@ func (x *Identity) String() string {
 func (*Identity) ProtoMessage() {}
 
 func (x *Identity) ProtoReflect() protoreflect.Message {
-	mi := &file_config_types_proto_msgTypes[0]
+	mi := &file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -177,7 +177,7 @@ func (x *Identity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Identity.ProtoReflect.Descriptor instead.
 func (*Identity) Descriptor() ([]byte, []int) {
-	return file_config_types_proto_rawDescGZIP(), []int{0}
+	return file_github_com_dogmatiq_interopspec_config_types_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Identity) GetName() string {
@@ -220,7 +220,7 @@ type Application struct {
 func (x *Application) Reset() {
 	*x = Application{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_config_types_proto_msgTypes[1]
+		mi := &file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -233,7 +233,7 @@ func (x *Application) String() string {
 func (*Application) ProtoMessage() {}
 
 func (x *Application) ProtoReflect() protoreflect.Message {
-	mi := &file_config_types_proto_msgTypes[1]
+	mi := &file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -246,7 +246,7 @@ func (x *Application) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Application.ProtoReflect.Descriptor instead.
 func (*Application) Descriptor() ([]byte, []int) {
-	return file_config_types_proto_rawDescGZIP(), []int{1}
+	return file_github_com_dogmatiq_interopspec_config_types_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Application) GetIdentity() *Identity {
@@ -292,7 +292,7 @@ type NameRole struct {
 func (x *NameRole) Reset() {
 	*x = NameRole{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_config_types_proto_msgTypes[2]
+		mi := &file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -305,7 +305,7 @@ func (x *NameRole) String() string {
 func (*NameRole) ProtoMessage() {}
 
 func (x *NameRole) ProtoReflect() protoreflect.Message {
-	mi := &file_config_types_proto_msgTypes[2]
+	mi := &file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -318,7 +318,7 @@ func (x *NameRole) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NameRole.ProtoReflect.Descriptor instead.
 func (*NameRole) Descriptor() ([]byte, []int) {
-	return file_config_types_proto_rawDescGZIP(), []int{2}
+	return file_github_com_dogmatiq_interopspec_config_types_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *NameRole) GetName() []byte {
@@ -360,7 +360,7 @@ type Handler struct {
 func (x *Handler) Reset() {
 	*x = Handler{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_config_types_proto_msgTypes[3]
+		mi := &file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -373,7 +373,7 @@ func (x *Handler) String() string {
 func (*Handler) ProtoMessage() {}
 
 func (x *Handler) ProtoReflect() protoreflect.Message {
-	mi := &file_config_types_proto_msgTypes[3]
+	mi := &file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -386,7 +386,7 @@ func (x *Handler) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Handler.ProtoReflect.Descriptor instead.
 func (*Handler) Descriptor() ([]byte, []int) {
-	return file_config_types_proto_rawDescGZIP(), []int{3}
+	return file_github_com_dogmatiq_interopspec_config_types_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Handler) GetIdentity() *Identity {
@@ -424,10 +424,12 @@ func (x *Handler) GetConsumed() []uint32 {
 	return nil
 }
 
-var File_config_types_proto protoreflect.FileDescriptor
+var File_github_com_dogmatiq_interopspec_config_types_proto protoreflect.FileDescriptor
 
-var file_config_types_proto_rawDesc = []byte{
-	0x0a, 0x12, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70,
+var file_github_com_dogmatiq_interopspec_config_types_proto_rawDesc = []byte{
+	0x0a, 0x32, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x64, 0x6f, 0x67,
+	0x6d, 0x61, 0x74, 0x69, 0x71, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6f, 0x70, 0x73, 0x70, 0x65,
+	0x63, 0x2f, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x17, 0x64, 0x6f, 0x67, 0x6d, 0x61, 0x2e, 0x69, 0x6e, 0x74, 0x65,
 	0x72, 0x6f, 0x70, 0x2e, 0x76, 0x31, 0x2e, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x22, 0x30, 0x0a,
 	0x08, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
@@ -485,20 +487,20 @@ var file_config_types_proto_rawDesc = []byte{
 }
 
 var (
-	file_config_types_proto_rawDescOnce sync.Once
-	file_config_types_proto_rawDescData = file_config_types_proto_rawDesc
+	file_github_com_dogmatiq_interopspec_config_types_proto_rawDescOnce sync.Once
+	file_github_com_dogmatiq_interopspec_config_types_proto_rawDescData = file_github_com_dogmatiq_interopspec_config_types_proto_rawDesc
 )
 
-func file_config_types_proto_rawDescGZIP() []byte {
-	file_config_types_proto_rawDescOnce.Do(func() {
-		file_config_types_proto_rawDescData = protoimpl.X.CompressGZIP(file_config_types_proto_rawDescData)
+func file_github_com_dogmatiq_interopspec_config_types_proto_rawDescGZIP() []byte {
+	file_github_com_dogmatiq_interopspec_config_types_proto_rawDescOnce.Do(func() {
+		file_github_com_dogmatiq_interopspec_config_types_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_dogmatiq_interopspec_config_types_proto_rawDescData)
 	})
-	return file_config_types_proto_rawDescData
+	return file_github_com_dogmatiq_interopspec_config_types_proto_rawDescData
 }
 
-var file_config_types_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_config_types_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_config_types_proto_goTypes = []interface{}{
+var file_github_com_dogmatiq_interopspec_config_types_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_github_com_dogmatiq_interopspec_config_types_proto_goTypes = []interface{}{
 	(MessageRole)(0),    // 0: dogma.interop.v1.config.MessageRole
 	(HandlerType)(0),    // 1: dogma.interop.v1.config.HandlerType
 	(*Identity)(nil),    // 2: dogma.interop.v1.config.Identity
@@ -506,7 +508,7 @@ var file_config_types_proto_goTypes = []interface{}{
 	(*NameRole)(nil),    // 4: dogma.interop.v1.config.NameRole
 	(*Handler)(nil),     // 5: dogma.interop.v1.config.Handler
 }
-var file_config_types_proto_depIdxs = []int32{
+var file_github_com_dogmatiq_interopspec_config_types_proto_depIdxs = []int32{
 	2, // 0: dogma.interop.v1.config.Application.identity:type_name -> dogma.interop.v1.config.Identity
 	4, // 1: dogma.interop.v1.config.Application.messages:type_name -> dogma.interop.v1.config.NameRole
 	5, // 2: dogma.interop.v1.config.Application.handlers:type_name -> dogma.interop.v1.config.Handler
@@ -520,13 +522,13 @@ var file_config_types_proto_depIdxs = []int32{
 	0, // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_config_types_proto_init() }
-func file_config_types_proto_init() {
-	if File_config_types_proto != nil {
+func init() { file_github_com_dogmatiq_interopspec_config_types_proto_init() }
+func file_github_com_dogmatiq_interopspec_config_types_proto_init() {
+	if File_github_com_dogmatiq_interopspec_config_types_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_config_types_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Identity); i {
 			case 0:
 				return &v.state
@@ -538,7 +540,7 @@ func file_config_types_proto_init() {
 				return nil
 			}
 		}
-		file_config_types_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Application); i {
 			case 0:
 				return &v.state
@@ -550,7 +552,7 @@ func file_config_types_proto_init() {
 				return nil
 			}
 		}
-		file_config_types_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NameRole); i {
 			case 0:
 				return &v.state
@@ -562,7 +564,7 @@ func file_config_types_proto_init() {
 				return nil
 			}
 		}
-		file_config_types_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Handler); i {
 			case 0:
 				return &v.state
@@ -579,19 +581,19 @@ func file_config_types_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_config_types_proto_rawDesc,
+			RawDescriptor: file_github_com_dogmatiq_interopspec_config_types_proto_rawDesc,
 			NumEnums:      2,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_config_types_proto_goTypes,
-		DependencyIndexes: file_config_types_proto_depIdxs,
-		EnumInfos:         file_config_types_proto_enumTypes,
-		MessageInfos:      file_config_types_proto_msgTypes,
+		GoTypes:           file_github_com_dogmatiq_interopspec_config_types_proto_goTypes,
+		DependencyIndexes: file_github_com_dogmatiq_interopspec_config_types_proto_depIdxs,
+		EnumInfos:         file_github_com_dogmatiq_interopspec_config_types_proto_enumTypes,
+		MessageInfos:      file_github_com_dogmatiq_interopspec_config_types_proto_msgTypes,
 	}.Build()
-	File_config_types_proto = out.File
-	file_config_types_proto_rawDesc = nil
-	file_config_types_proto_goTypes = nil
-	file_config_types_proto_depIdxs = nil
+	File_github_com_dogmatiq_interopspec_config_types_proto = out.File
+	file_github_com_dogmatiq_interopspec_config_types_proto_rawDesc = nil
+	file_github_com_dogmatiq_interopspec_config_types_proto_goTypes = nil
+	file_github_com_dogmatiq_interopspec_config_types_proto_depIdxs = nil
 }

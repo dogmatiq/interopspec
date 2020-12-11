@@ -11,6 +11,11 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- Added the content of 'github.com/dogmatiq/envelopespec' repository into
+  `envelope` subdirectory.
+
 - Initial release
 
 <!-- references -->

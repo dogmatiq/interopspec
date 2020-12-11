@@ -1,5 +1,5 @@
 syntax = "proto3";
-package dogma.envelope.v1;
+package dogma.interop.v1.envelope;
 
 option go_package = "github.com/dogmatiq/interopspec/envelope";
 

@@ -8,7 +8,8 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var _ = Describe("func CheckWellFormed()", func() {
+var _ = Describe("type Envelope", func() {
+	Describe("func Validate()", func() {
 	var env *Envelope
 
 	BeforeEach(func() {

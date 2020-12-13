@@ -1,7 +1,7 @@
 syntax = "proto3";
 package dogma.interop.v1.envelope;
 
-option go_package = "github.com/dogmatiq/interopspec/envelope";
+option go_package = "github.com/dogmatiq/interopspec/envelopespec";
 
 // Identity is the identity of a Dogma application or handler.
 message Identity {

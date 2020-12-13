@@ -1,4 +1,4 @@
-package envelope_test
+package envelopespec_test
 
 import (
 	"reflect"

@@ -1,4 +1,4 @@
-package envelope
+package envelopespec
 
 import (
 	"errors"

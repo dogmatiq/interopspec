@@ -1,9 +1,9 @@
-package envelope_test
+package envelopespec_test
 
 import (
 	"time"
 
-	. "github.com/dogmatiq/interopspec/envelope"
+	. "github.com/dogmatiq/interopspec/envelopespec"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

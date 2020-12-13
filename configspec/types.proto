@@ -1,7 +1,7 @@
 syntax = "proto3";
 package dogma.interop.v1.config;
 
-option go_package = "github.com/dogmatiq/interopspec/config";
+option go_package = "github.com/dogmatiq/interopspec/configspec";
 
 // Identity is a protocol buffers representation of the configkit.Identity type.
 message Identity {

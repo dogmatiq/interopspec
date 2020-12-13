@@ -13,8 +13,7 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 ### Added
 
-- Added the content of 'github.com/dogmatiq/envelopespec' repository into
-  `envelope` subdirectory.
+- Add `envelopespec` package
 
 - Initial release
 

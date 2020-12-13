@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-// CheckWellFormed returns an error if env is not well-formed.
+// Validate returns an error if env is not well-formed.
 //
 // Well-formedness means that all compulsory fields are populated, and that no
 // incompatible fields are populated.
@@ -15,64 +15,57 @@ import (
 //
 // It does not perform "deep" validation, such as ensuring messages, times, etc
 // can be unmarshaled.
-func CheckWellFormed(env *Envelope) error {
-	if env.GetMessageId() == "" {
+func (e *Envelope) Validate() error {
+	if e.GetMessageId() == "" {
 		return errors.New("message ID must not be empty")
 	}
 
-	if env.GetCausationId() == "" {
+	if e.GetCausationId() == "" {
 		return errors.New("causation ID must not be empty")
 	}
 
-	if env.GetCorrelationId() == "" {
+	if e.GetCorrelationId() == "" {
 		return errors.New("correlation ID must not be empty")
 	}
 
-	if err := checkIdentity(env.GetSourceApplication()); err != nil {
+	if err := checkIdentity(e.GetSourceApplication()); err != nil {
 		return fmt.Errorf("application identity is invalid: %w", err)
 	}
 
-	h := env.GetSourceHandler()
+	h := e.GetSourceHandler()
 
 	if isEmpty(h) {
-		if env.GetSourceInstanceId() != "" {
+		if e.GetSourceInstanceId() != "" {
 			return errors.New("source instance ID must not be specified without providing a handler identity")
 		}
 	} else if err := checkIdentity(h); err != nil {
 		return fmt.Errorf("handler identity is invalid: %w", err)
 	}
 
-	if env.GetCreatedAt() == "" {
+	if e.GetCreatedAt() == "" {
 		return errors.New("created-at time must not be empty")
 	}
 
-	if env.GetScheduledFor() != "" && env.GetSourceInstanceId() == "" {
+	if e.GetScheduledFor() != "" && e.GetSourceInstanceId() == "" {
 		return errors.New("scheduled-for time must not be specified without a providing source handler and instance ID")
 	}
 
 	// Note: we allow md.Description to be empty. Some messages may simply not
 	// have a concise human-readable description available.
 
-	if env.GetPortableName() == "" {
+	if e.GetPortableName() == "" {
 		return errors.New("portable name must not be empty")
 	}
 
-	if env.GetMediaType() == "" {
+	if e.GetMediaType() == "" {
 		return errors.New("media-type must not be empty")
 	}
 
-	// Note, env.Data *may* be empty. A specific application's marshaler could
+	// Note, e.Data *may* be empty. A specific application's marshaler could
 	// conceivably have a message with no data where the message type is
 	// sufficient information.
 
 	return nil
-}
-
-// MustBeWellFormed panics if env is not well-formed.
-func MustBeWellFormed(env *Envelope) {
-	if err := CheckWellFormed(env); err != nil {
-		panic(err)
-	}
 }
 
 // checkIdentity returns an error if id is not well-formed.

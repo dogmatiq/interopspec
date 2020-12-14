@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	interopspec "github.com/dogmatiq/interopspec"
+	"github.com/dogmatiq/interopspec"
 )
 
 // Validate returns an error if env is not well-formed.

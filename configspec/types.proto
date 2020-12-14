@@ -3,14 +3,7 @@ package dogma.interop.v1.config;
 
 option go_package = "github.com/dogmatiq/interopspec/configspec";
 
-// Identity is a protocol buffers representation of the configkit.Identity type.
-message Identity {
-  // Name is the entity's unique name.
-  string name = 1;
-
-  // Key is the entity's immutable, unique key.
-  string key = 2;
-}
+import "github.com/dogmatiq/interopspec/identity.proto";
 
 // MessageRole is a protocol buffers representation of the
 // configkit/message.Role enumeration.
@@ -35,7 +28,7 @@ enum HandlerType {
 // interface.
 message Application {
   // Identity is the application's identity.
-  Identity identity = 1;
+  dogma.interop.v1.Identity identity = 1;
 
   // TypeName is the fully-qualified name of the Go type used to implement the
   // application.
@@ -66,7 +59,7 @@ message NameRole {
 // interface.
 message Handler {
   // Identity is the handler's identity.
-  Identity identity = 1;
+  dogma.interop.v1.Identity identity = 1;
 
   // TypeName is the fully-qualified name of the Go type used to implement the
   // handler.

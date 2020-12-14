@@ -4,6 +4,7 @@ package dogma.interop.v1.config;
 option go_package = "github.com/dogmatiq/interopspec/configspec";
 
 import "github.com/dogmatiq/interopspec/configspec/types.proto";
+import "github.com/dogmatiq/interopspec/identity.proto";
 
 // Config is a service for inspecting the configuration of Dogma applications
 // hosted by the engine on the server.
@@ -19,7 +20,9 @@ service Config {
 
 message ListApplicationIdentitiesRequest {}
 
-message ListApplicationIdentitiesResponse { repeated Identity identities = 1; }
+message ListApplicationIdentitiesResponse {
+  repeated dogma.interop.v1.Identity identities = 1;
+}
 
 message ListApplicationsRequest {}
 

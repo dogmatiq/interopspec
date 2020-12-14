@@ -5,9 +5,9 @@ option go_package = "github.com/dogmatiq/interopspec/configspec";
 
 import "github.com/dogmatiq/interopspec/identity.proto";
 
-// Config is a service for inspecting the configuration of Dogma applications
+// API is a service for inspecting the configuration of Dogma applications
 // hosted by the engine on the server.
-service Config {
+service API {
   // ListApplicationIdentities returns the identity of all applications.
   rpc ListApplicationIdentities(ListApplicationIdentitiesRequest)
       returns (ListApplicationIdentitiesResponse);

@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- Add `envelopespec` package
+
 - Initial release
 
 <!-- references -->

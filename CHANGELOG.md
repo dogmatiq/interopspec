@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 ### Added
 
+- Add `transportspec` package
+- Add `configspec` package
 - Add `envelopespec` package
 
 - Initial release

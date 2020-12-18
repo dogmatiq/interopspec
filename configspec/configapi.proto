@@ -1,0 +1,87 @@
+syntax = "proto3";
+package dogma.interop.v1.config;
+
+option go_package = "github.com/dogmatiq/interopspec/configspec";
+
+import "github.com/dogmatiq/interopspec/identity.proto";
+
+// ConfigAPI is a service for inspecting the configuration of Dogma applications
+// hosted by the engine on the server.
+service ConfigAPI {
+  // ListApplicationIdentities returns the identity of all applications.
+  rpc ListApplicationIdentities(ListApplicationIdentitiesRequest)
+      returns (ListApplicationIdentitiesResponse);
+
+  // ListApplications returns the full configuration of all applications.
+  rpc ListApplications(ListApplicationsRequest)
+      returns (ListApplicationsResponse);
+}
+
+message ListApplicationIdentitiesRequest {}
+
+message ListApplicationIdentitiesResponse {
+  repeated dogma.interop.v1.Identity identities = 1;
+}
+
+message ListApplicationsRequest {}
+
+message ListApplicationsResponse { repeated Application applications = 1; }
+
+// MessageRole is an enumeration of the roles that a message can play within an
+// application.
+enum MessageRole {
+  UNKNOWN_MESSAGE_ROLE = 0;
+  COMMAND = 1;
+  EVENT = 2;
+  TIMEOUT = 3;
+}
+
+// HandlerType is an enumeration of the types of handlers that an application
+// can contain.
+enum HandlerType {
+  UNKNOWN_HANDLER_TYPE = 0;
+  AGGREGATE = 1;
+  PROCESS = 2;
+  INTEGRATION = 3;
+  PROJECTION = 4;
+}
+
+// Application represents a Dogma application hosted by the engine on the
+// server.
+message Application {
+  // Identity is the application's identity.
+  dogma.interop.v1.Identity identity = 1;
+
+  // GoType is the fully-qualified name of the Go type that provides as the
+  // application's implementation.
+  string go_type = 2;
+
+  // Handlers is the set of handlers within the application.
+  repeated Handler handlers = 3;
+}
+
+
+// Handler is a message handler within an application.
+message Handler {
+  // Identity is the handler's identity.
+  dogma.interop.v1.Identity identity = 1;
+
+  // GoType is the fully-qualified name of the Go type that provides as the
+  // handler's implementation.
+  string go_type = 2;
+
+  // Type is the handler's type.
+  HandlerType type = 3;
+
+  // ProducedMessages is the set of messages produced by this handler.
+  //
+  // The keys are the fully-qualified names of the message's Go type and the
+  // value is the role that message plays within the application.
+  map<string, MessageRole> produced_messages = 4;
+
+  // ConsumedMessages is the set of messages consumed by this handler.
+  //
+  // The keys are the fully-qualified names of the message's Go type and the
+  // value is the role that message plays within the application.
+  map<string, MessageRole> consumed_messages = 5;
+}

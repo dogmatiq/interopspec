@@ -3,8 +3,8 @@ package dogma.interop.v1.presence;
 
 option go_package = "github.com/dogmatiq/interopspec/presencespec";
 
-// API is a service for watching a server's availability.
-service API {
+// PresenceAPI is a service for watching a server's availability.
+service PresenceAPI {
   // Watch starts watching the server until it goes offline.
   //
   // The server MUST NOT send any responses.

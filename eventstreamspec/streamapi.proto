@@ -1,0 +1,117 @@
+syntax = "proto3";
+package dogma.interop.v1.eventstream;
+
+import "github.com/dogmatiq/interopspec/envelopespec/envelope.proto";
+
+option go_package = "github.com/dogmatiq/interopspec/eventstreamspec";
+
+// StreamAPI is a service for consuming offset-based ordered streams of event
+// messages.
+service StreamAPI {
+  // Consume starts consuming from a particular "start point" within an
+  // application's event stream.
+  //
+  // The start point can be specified using different mechanisms. If the server
+  // does not support the requested mechanism it MUST return an UNIMPLEMENTED
+  // error with an attached UnimplementedStartPointMechanism value.
+  //
+  // If the requested start point is beyond the end of the application's event
+  // stream, the server SHOULD keep the stream open and send new events as they
+  // are produced.
+  //
+  // If the server does not host the application specified in the request, it
+  // MUST return a NOT_FOUND error with an attached UnrecognizedApplication
+  // value.
+  //
+  // If any of the requested event types are not produced by the specified
+  // application the server MUST return an INVALID_ARGUMENT error with an
+  // attached UnrecognizedEventType value for each unrecognized event type.
+  //
+  // If none of the requested media-types for a given event type are supported
+  // the server MUST return an INVALID_ARGUMENT error with an attached
+  // NoRecognizedMediaTypes value for each such event type.
+  rpc Consume(ConsumeRequest) returns (stream ConsumeResponse);
+
+  // EventTypes queries the event types that the server supports for a specific
+  // application.
+  //
+  // If the server does not host the application specified in the request, it
+  // MUST return a NOT_FOUND error with an attached UnrecognizedApplication
+  // value.
+  rpc EventTypes(EventTypesRequest) returns (EventTypesResponse);
+}
+
+message ConsumeRequest {
+  // ApplicationKey is the identity key of the application to consume from.
+  string application_key = 1;
+
+  // EventTypes is a list of event types to be consumed.
+  repeated EventType event_types = 2;
+
+  // StartPoint specifies the point within the stream to start consuming.
+  oneof start_point {
+    // Offset is the offset of the earliest message to be consumed.
+    //
+    // The offset of the message returned will be greater than this value if the
+    // event at that offset is not one of the requested event types.
+    uint64 offset = 3;
+  }
+}
+
+message ConsumeResponse {
+  // Offset is the offset of the message.
+  uint64 offset = 1;
+
+  // Envelope is the envelope containing the event.
+  dogma.interop.v1.envelope.Envelope envelope = 2;
+}
+
+message EventTypesRequest {
+}
+
+message EventTypesResponse {
+  // EventTypes is a list of event types supported by the server.
+  repeated EventType event_types = 1;
+}
+
+message EventType {
+  // PortableName is a name that uniquely identifies the event type across
+  // process boundaries.
+  string portable_name = 1;
+
+  // MediaTypes is the set of supported media-types that can be used to
+  // represents events of this type, in order of preference.
+  repeated string media_types = 2;
+}
+
+// UnrecognizedApplication is an error-details value for INVALID_ARGUMENT
+// errors that occurred because a specific application key was not recognized by
+// the server.
+message UnrecognizedApplication {
+  // ApplicationKey is the identity of the application that produced the error.
+  string application_key = 1;
+}
+
+// UnrecognizedEventType is an error-details value for INVALID_ARGUMENT errors
+// that occurred because a specific event type was not recognized by the
+// server.
+message UnrecognizedEventType {
+  // PortableName is a name that uniquely identifies the event type across
+  // process boundaries.
+  string portable_name = 2;
+}
+
+// NoRecognizedMediaTypes is an error-details value for INVALID_ARGUMENT errors
+// that occurred because a client requested that events of a specific type be
+// encoded using media-types that are not recognized by the server.
+message NoRecognizedMediaTypes {
+  // PortableName is a name that uniquely identifies the event type across
+  // process boundaries.
+  string portable_name = 2;
+}
+
+// UnimplementedStartPointMechanism is an error-details value for UNIMPLEMENTED
+// errors that occurred because a client started consuming using a start point
+// mechanism that is not implemented by the server.
+message UnimplementedStartPointMechanism {
+}

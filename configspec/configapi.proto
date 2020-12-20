@@ -6,19 +6,9 @@ option go_package = "github.com/dogmatiq/interopspec/configspec";
 // ConfigAPI is a service for inspecting the configuration of Dogma applications
 // hosted by the engine on the server.
 service ConfigAPI {
-  // ListApplicationIdentities returns the identity of all applications.
-  rpc ListApplicationIdentities(ListApplicationIdentitiesRequest)
-      returns (ListApplicationIdentitiesResponse);
-
   // ListApplications returns the full configuration of all applications.
   rpc ListApplications(ListApplicationsRequest)
       returns (ListApplicationsResponse);
-}
-
-message ListApplicationIdentitiesRequest {}
-
-message ListApplicationIdentitiesResponse {
-  repeated Identity identities = 1;
 }
 
 message ListApplicationsRequest {}

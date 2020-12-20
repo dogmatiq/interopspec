@@ -1,0 +1,37 @@
+syntax = "proto3";
+package dogma.interop.v1.discover;
+
+option go_package = "github.com/dogmatiq/interopspec/presencespec";
+
+// DiscoverAPI is a service for discovering the applications hosted on a server.
+service DiscoverAPI {
+  // ListApplicationIdentities returns the identity of all applications.
+  rpc ListApplicationIdentities(ListApplicationIdentitiesRequest)
+      returns (ListApplicationIdentitiesResponse);
+
+  // Watch starts watching the server until it goes offline.
+  //
+  // The server MUST NOT send any responses.
+  //
+  // The caller SHOULD await a response (which is never sent) until an error
+  // occurs, indicating that the server has gone offline.
+  rpc Watch(WatchRequest) returns (stream WatchResponse);
+}
+
+message ListApplicationIdentitiesRequest {}
+
+message ListApplicationIdentitiesResponse {
+  repeated Identity identities = 1;
+}
+
+message WatchRequest {}
+message WatchResponse {}
+
+// Identity represents the identity of an application or handler.
+message Identity {
+  // Name is the entity's unique name.
+  string name = 1;
+
+  // Key is the entity's immutable, unique key.
+  string key = 2;
+}

@@ -3,8 +3,6 @@ package dogma.interop.v1.envelope;
 
 option go_package = "github.com/dogmatiq/interopspec/envelopespec";
 
-import "github.com/dogmatiq/interopspec/identity.proto";
-
 // Envelope is a container for a marshaled message and it meta-data.
 message Envelope {
   // MessageId is a unique identifier for the message.
@@ -20,12 +18,12 @@ message Envelope {
 
   // SourceApplication is the identity of the Dogma application that produced
   // the message in this envelope.
-  dogma.interop.v1.Identity source_application = 4;
+  Identity source_application = 4;
 
   // SourceHandler is the identity of the Dogma handler that produced the
   // message in this envelope. It is the zero-value if the message was not
   // produced by a handler.
-  dogma.interop.v1.Identity source_handler = 5;
+  Identity source_handler = 5;
 
   // SourceInstanceId is the ID of the aggregate or process instance that
   // produced the message in this envelope. It is empty if the message was not
@@ -52,4 +50,13 @@ message Envelope {
 
   // Data is the binary message data.
   bytes data = 12;
+}
+
+// Identity represents the identity of an application or handler.
+message Identity {
+  // Name is the entity's unique name.
+  string name = 1;
+
+  // Key is the entity's immutable, unique key.
+  string key = 2;
 }

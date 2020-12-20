@@ -3,8 +3,6 @@ package dogma.interop.v1.config;
 
 option go_package = "github.com/dogmatiq/interopspec/configspec";
 
-import "github.com/dogmatiq/interopspec/identity.proto";
-
 // ConfigAPI is a service for inspecting the configuration of Dogma applications
 // hosted by the engine on the server.
 service ConfigAPI {
@@ -20,7 +18,7 @@ service ConfigAPI {
 message ListApplicationIdentitiesRequest {}
 
 message ListApplicationIdentitiesResponse {
-  repeated dogma.interop.v1.Identity identities = 1;
+  repeated Identity identities = 1;
 }
 
 message ListApplicationsRequest {}
@@ -50,7 +48,7 @@ enum HandlerType {
 // server.
 message Application {
   // Identity is the application's identity.
-  dogma.interop.v1.Identity identity = 1;
+  Identity identity = 1;
 
   // GoType is the fully-qualified name of the Go type that provides as the
   // application's implementation.
@@ -64,7 +62,7 @@ message Application {
 // Handler is a message handler within an application.
 message Handler {
   // Identity is the handler's identity.
-  dogma.interop.v1.Identity identity = 1;
+  Identity identity = 1;
 
   // GoType is the fully-qualified name of the Go type that provides as the
   // handler's implementation.
@@ -84,4 +82,13 @@ message Handler {
   // The keys are the fully-qualified names of the message's Go type and the
   // value is the role that message plays within the application.
   map<string, MessageRole> consumed_messages = 5;
+}
+
+// Identity represents the identity of an application or handler.
+message Identity {
+  // Name is the entity's unique name.
+  string name = 1;
+
+  // Key is the entity's immutable, unique key.
+  string key = 2;
 }

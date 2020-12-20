@@ -3,8 +3,6 @@ package envelopespec
 import (
 	"errors"
 	"fmt"
-
-	"github.com/dogmatiq/interopspec"
 )
 
 // Validate returns an error if env is not well-formed.
@@ -71,7 +69,7 @@ func (e *Envelope) Validate() error {
 }
 
 // checkIdentity returns an error if id is not well-formed.
-func checkIdentity(id *interopspec.Identity) error {
+func checkIdentity(id *Identity) error {
 	if id.GetName() == "" {
 		return errors.New("identity name must not be empty")
 	}
@@ -84,6 +82,6 @@ func checkIdentity(id *interopspec.Identity) error {
 }
 
 // isEmpty returns true if the given id is empty.
-func isEmpty(id *interopspec.Identity) bool {
+func isEmpty(id *Identity) bool {
 	return id.GetName() == "" && id.GetKey() == ""
 }

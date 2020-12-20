@@ -3,7 +3,6 @@ package envelopespec_test
 import (
 	"time"
 
-	. "github.com/dogmatiq/interopspec"
 	. "github.com/dogmatiq/interopspec/envelopespec"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

@@ -790,7 +790,7 @@ type StreamAPIClient interface {
 	// application's event stream.
 	//
 	// The start point can be specified using different mechanisms. If the server
-	// does not support the requested mechanism is MUST return an UNIMPLEMENTED
+	// does not support the requested mechanism it MUST return an UNIMPLEMENTED
 	// error with an attached UnimplementedStartPointMechanism value.
 	//
 	// If the requested start point is beyond the end of the application's event
@@ -873,7 +873,7 @@ type StreamAPIServer interface {
 	// application's event stream.
 	//
 	// The start point can be specified using different mechanisms. If the server
-	// does not support the requested mechanism is MUST return an UNIMPLEMENTED
+	// does not support the requested mechanism it MUST return an UNIMPLEMENTED
 	// error with an attached UnimplementedStartPointMechanism value.
 	//
 	// If the requested start point is beyond the end of the application's event

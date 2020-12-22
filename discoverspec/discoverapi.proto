@@ -6,14 +6,8 @@ option go_package = "github.com/dogmatiq/interopspec/discoverspec";
 // DiscoverAPI is a service for discovering the applications hosted on a server.
 service DiscoverAPI {
   // Check is a no-op that allows the client to check if the DiscoverAPI is
-  // implemented by a server without the need for the server to implement the
-  // gRPC reflection services.
-  //
-  // This is implemented as a separate operation to Watch() because Watch()
-  // returns a stream. A client requires at least one response to be received
-  // before it can definitively say that the method has been implemented, but
-  // it's possible that a successful and well-behaved call to Watch() never
-  // sends any responses.
+  // implemented by a server (or that the server is present) without the need
+  // for the server to implement the gRPC reflection services.
   rpc Check(CheckRequest) returns (CheckResponse);
 
   // Watch starts watching the server for updates to the availability of Dogma

@@ -5,33 +5,27 @@ option go_package = "github.com/dogmatiq/interopspec/discoverspec";
 
 // DiscoverAPI is a service for discovering the applications hosted on a server.
 service DiscoverAPI {
-  // ListApplicationIdentities returns the identity of all applications.
-  rpc ListApplicationIdentities(ListApplicationIdentitiesRequest)
-      returns (ListApplicationIdentitiesResponse);
-
-  // Watch starts watching the server for updates to its availability.
-  //
-  // The client SHOULD treat the server as though it had not been discovered at
-  // all until it sends a WatchResponse with the "available" field set to true.
+  // Watch starts watching the server for updates to the availability of Dogma
+  // applications.
   rpc Watch(WatchRequest) returns (stream WatchResponse);
 }
 
-message ListApplicationIdentitiesRequest {}
-
-message ListApplicationIdentitiesResponse {
-  repeated Identity identities = 1;
-}
-
 message WatchRequest {}
+
 message WatchResponse {
-  bool available = 1;
+  // Application is the identity of the Dogma application that the
+  Identity application = 1;
+
+  // Available indicates whether the application should currently be considered
+  // available or not.
+  bool available = 2;
 }
 
-// Identity represents the identity of an application or handler.
+// Identity represents the identity of an application.
 message Identity {
-  // Name is the entity's unique name.
+  // Name is the application's unique name.
   string name = 1;
 
-  // Key is the entity's immutable, unique key.
+  // Key is the application's immutable, unique key.
   string key = 2;
 }

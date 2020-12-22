@@ -9,12 +9,10 @@ service DiscoverAPI {
   rpc ListApplicationIdentities(ListApplicationIdentitiesRequest)
       returns (ListApplicationIdentitiesResponse);
 
-  // Watch starts watching the server until it goes offline.
+  // Watch starts watching the server for updates to its availability.
   //
-  // The server MUST NOT send any responses.
-  //
-  // The caller SHOULD await a response (which is never sent) until an error
-  // occurs, indicating that the server has gone offline.
+  // The client SHOULD treat the server as though it had not been discovered at
+  // all until it sends a WatchResponse with the "available" field set to true.
   rpc Watch(WatchRequest) returns (stream WatchResponse);
 }
 
@@ -25,7 +23,9 @@ message ListApplicationIdentitiesResponse {
 }
 
 message WatchRequest {}
-message WatchResponse {}
+message WatchResponse {
+  bool available = 1;
+}
 
 // Identity represents the identity of an application or handler.
 message Identity {

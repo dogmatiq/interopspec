@@ -9,16 +9,22 @@ The format is based on [Keep a Changelog], and this project adheres to
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
 
+## [Unreleased]
+
+### Added
+
+- **[BC]** Add `discoverspec.DiscoverAPI.Check()`
+
 ## [0.4.0] - 2020-12-22
 
-### Add
+### Added
 
 - **[BC]** Add `discoverspec.DiscoverAPI.WatchResponse.Application` field
 
 ### Removed
 
 - **[BC]** Remove `discoverspec.DiscoverAPI.ListApplicationIdentities()`
-
+`
 ## [0.3.0] - 2020-12-22
 
 ### Added

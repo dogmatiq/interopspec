@@ -29,6 +29,82 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
+type CheckRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *CheckRequest) Reset() {
+	*x = CheckRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CheckRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CheckRequest) ProtoMessage() {}
+
+func (x *CheckRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CheckRequest.ProtoReflect.Descriptor instead.
+func (*CheckRequest) Descriptor() ([]byte, []int) {
+	return file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDescGZIP(), []int{0}
+}
+
+type CheckResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *CheckResponse) Reset() {
+	*x = CheckResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CheckResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CheckResponse) ProtoMessage() {}
+
+func (x *CheckResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CheckResponse.ProtoReflect.Descriptor instead.
+func (*CheckResponse) Descriptor() ([]byte, []int) {
+	return file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDescGZIP(), []int{1}
+}
+
 type WatchRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -38,7 +114,7 @@ type WatchRequest struct {
 func (x *WatchRequest) Reset() {
 	*x = WatchRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[0]
+		mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -51,7 +127,7 @@ func (x *WatchRequest) String() string {
 func (*WatchRequest) ProtoMessage() {}
 
 func (x *WatchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[0]
+	mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -64,7 +140,7 @@ func (x *WatchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WatchRequest.ProtoReflect.Descriptor instead.
 func (*WatchRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDescGZIP(), []int{0}
+	return file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDescGZIP(), []int{2}
 }
 
 type WatchResponse struct {
@@ -82,7 +158,7 @@ type WatchResponse struct {
 func (x *WatchResponse) Reset() {
 	*x = WatchResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[1]
+		mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -95,7 +171,7 @@ func (x *WatchResponse) String() string {
 func (*WatchResponse) ProtoMessage() {}
 
 func (x *WatchResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[1]
+	mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -108,7 +184,7 @@ func (x *WatchResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WatchResponse.ProtoReflect.Descriptor instead.
 func (*WatchResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDescGZIP(), []int{1}
+	return file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *WatchResponse) GetApplication() *Identity {
@@ -140,7 +216,7 @@ type Identity struct {
 func (x *Identity) Reset() {
 	*x = Identity{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[2]
+		mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -153,7 +229,7 @@ func (x *Identity) String() string {
 func (*Identity) ProtoMessage() {}
 
 func (x *Identity) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[2]
+	mi := &file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -166,7 +242,7 @@ func (x *Identity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Identity.ProtoReflect.Descriptor instead.
 func (*Identity) Descriptor() ([]byte, []int) {
-	return file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDescGZIP(), []int{2}
+	return file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Identity) GetName() string {
@@ -191,29 +267,37 @@ var file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDesc 
 	0x63, 0x2f, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x73, 0x70, 0x65, 0x63, 0x2f, 0x64,
 	0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x19, 0x64, 0x6f, 0x67, 0x6d, 0x61, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6f, 0x70, 0x2e,
-	0x76, 0x31, 0x2e, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x22, 0x0e, 0x0a, 0x0c, 0x57,
-	0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x74, 0x0a, 0x0d, 0x57,
-	0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x45, 0x0a, 0x0b,
-	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x23, 0x2e, 0x64, 0x6f, 0x67, 0x6d, 0x61, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6f,
-	0x70, 0x2e, 0x76, 0x31, 0x2e, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x49, 0x64,
-	0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x52, 0x0b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x12, 0x1c, 0x0a, 0x09, 0x61, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x09, 0x61, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c,
-	0x65, 0x22, 0x30, 0x0a, 0x08, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x12, 0x12, 0x0a,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d,
-	0x65, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03,
-	0x6b, 0x65, 0x79, 0x32, 0x6b, 0x0a, 0x0b, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x41,
-	0x50, 0x49, 0x12, 0x5c, 0x0a, 0x05, 0x57, 0x61, 0x74, 0x63, 0x68, 0x12, 0x27, 0x2e, 0x64, 0x6f,
-	0x67, 0x6d, 0x61, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6f, 0x70, 0x2e, 0x76, 0x31, 0x2e, 0x64,
-	0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x57, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x64, 0x6f, 0x67, 0x6d, 0x61, 0x2e, 0x69, 0x6e, 0x74,
-	0x65, 0x72, 0x6f, 0x70, 0x2e, 0x76, 0x31, 0x2e, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72,
-	0x2e, 0x57, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x30, 0x01,
-	0x42, 0x2e, 0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x64,
-	0x6f, 0x67, 0x6d, 0x61, 0x74, 0x69, 0x71, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6f, 0x70, 0x73,
-	0x70, 0x65, 0x63, 0x2f, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x73, 0x70, 0x65, 0x63,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x76, 0x31, 0x2e, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x22, 0x0e, 0x0a, 0x0c, 0x43,
+	0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x0f, 0x0a, 0x0d, 0x43,
+	0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x0e, 0x0a, 0x0c,
+	0x57, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x74, 0x0a, 0x0d,
+	0x57, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x45, 0x0a,
+	0x0b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x23, 0x2e, 0x64, 0x6f, 0x67, 0x6d, 0x61, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72,
+	0x6f, 0x70, 0x2e, 0x76, 0x31, 0x2e, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x49,
+	0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x52, 0x0b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1c, 0x0a, 0x09, 0x61, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x09, 0x61, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62,
+	0x6c, 0x65, 0x22, 0x30, 0x0a, 0x08, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x12, 0x12,
+	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
+	0x6d, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x03, 0x6b, 0x65, 0x79, 0x32, 0xc7, 0x01, 0x0a, 0x0b, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65,
+	0x72, 0x41, 0x50, 0x49, 0x12, 0x5a, 0x0a, 0x05, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x12, 0x27, 0x2e,
+	0x64, 0x6f, 0x67, 0x6d, 0x61, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6f, 0x70, 0x2e, 0x76, 0x31,
+	0x2e, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x64, 0x6f, 0x67, 0x6d, 0x61, 0x2e, 0x69,
+	0x6e, 0x74, 0x65, 0x72, 0x6f, 0x70, 0x2e, 0x76, 0x31, 0x2e, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76,
+	0x65, 0x72, 0x2e, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x5c, 0x0a, 0x05, 0x57, 0x61, 0x74, 0x63, 0x68, 0x12, 0x27, 0x2e, 0x64, 0x6f, 0x67, 0x6d,
+	0x61, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6f, 0x70, 0x2e, 0x76, 0x31, 0x2e, 0x64, 0x69, 0x73,
+	0x63, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x57, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x28, 0x2e, 0x64, 0x6f, 0x67, 0x6d, 0x61, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72,
+	0x6f, 0x70, 0x2e, 0x76, 0x31, 0x2e, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x57,
+	0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x30, 0x01, 0x42, 0x2e,
+	0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x64, 0x6f, 0x67,
+	0x6d, 0x61, 0x74, 0x69, 0x71, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6f, 0x70, 0x73, 0x70, 0x65,
+	0x63, 0x2f, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x73, 0x70, 0x65, 0x63, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -228,18 +312,22 @@ func file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDesc
 	return file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDescData
 }
 
-var file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_goTypes = []interface{}{
-	(*WatchRequest)(nil),  // 0: dogma.interop.v1.discover.WatchRequest
-	(*WatchResponse)(nil), // 1: dogma.interop.v1.discover.WatchResponse
-	(*Identity)(nil),      // 2: dogma.interop.v1.discover.Identity
+	(*CheckRequest)(nil),  // 0: dogma.interop.v1.discover.CheckRequest
+	(*CheckResponse)(nil), // 1: dogma.interop.v1.discover.CheckResponse
+	(*WatchRequest)(nil),  // 2: dogma.interop.v1.discover.WatchRequest
+	(*WatchResponse)(nil), // 3: dogma.interop.v1.discover.WatchResponse
+	(*Identity)(nil),      // 4: dogma.interop.v1.discover.Identity
 }
 var file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_depIdxs = []int32{
-	2, // 0: dogma.interop.v1.discover.WatchResponse.application:type_name -> dogma.interop.v1.discover.Identity
-	0, // 1: dogma.interop.v1.discover.DiscoverAPI.Watch:input_type -> dogma.interop.v1.discover.WatchRequest
-	1, // 2: dogma.interop.v1.discover.DiscoverAPI.Watch:output_type -> dogma.interop.v1.discover.WatchResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
+	4, // 0: dogma.interop.v1.discover.WatchResponse.application:type_name -> dogma.interop.v1.discover.Identity
+	0, // 1: dogma.interop.v1.discover.DiscoverAPI.Check:input_type -> dogma.interop.v1.discover.CheckRequest
+	2, // 2: dogma.interop.v1.discover.DiscoverAPI.Watch:input_type -> dogma.interop.v1.discover.WatchRequest
+	1, // 3: dogma.interop.v1.discover.DiscoverAPI.Check:output_type -> dogma.interop.v1.discover.CheckResponse
+	3, // 4: dogma.interop.v1.discover.DiscoverAPI.Watch:output_type -> dogma.interop.v1.discover.WatchResponse
+	3, // [3:5] is the sub-list for method output_type
+	1, // [1:3] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -252,7 +340,7 @@ func file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_init() 
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WatchRequest); i {
+			switch v := v.(*CheckRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -264,7 +352,7 @@ func file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_init() 
 			}
 		}
 		file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WatchResponse); i {
+			switch v := v.(*CheckResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -276,6 +364,30 @@ func file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_init() 
 			}
 		}
 		file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WatchRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WatchResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Identity); i {
 			case 0:
 				return &v.state
@@ -294,7 +406,7 @@ func file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_init() 
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_github_com_dogmatiq_interopspec_discoverspec_discoverapi_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -320,8 +432,23 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DiscoverAPIClient interface {
+	// Check is a no-op that allows the client to check if the DiscoverAPI is
+	// implemented by a server without the need for the server to implement the
+	// gRPC reflection services.
+	//
+	// This is implemented as a separate operation to Watch() because Watch()
+	// returns a stream. A client requires at least one response to be received
+	// before it can definitively say that the method has been implemented, but
+	// it's possible that a successful and well-behaved call to Watch() never
+	// sends any responses.
+	Check(ctx context.Context, in *CheckRequest, opts ...grpc.CallOption) (*CheckResponse, error)
 	// Watch starts watching the server for updates to the availability of Dogma
 	// applications.
+	//
+	// When the call is first made the client sends a response for each
+	// application that is currently available on the server. After this time the
+	// server sends a response each time the availability of a specific
+	// application changes.
 	Watch(ctx context.Context, in *WatchRequest, opts ...grpc.CallOption) (DiscoverAPI_WatchClient, error)
 }
 
@@ -331,6 +458,15 @@ type discoverAPIClient struct {
 
 func NewDiscoverAPIClient(cc grpc.ClientConnInterface) DiscoverAPIClient {
 	return &discoverAPIClient{cc}
+}
+
+func (c *discoverAPIClient) Check(ctx context.Context, in *CheckRequest, opts ...grpc.CallOption) (*CheckResponse, error) {
+	out := new(CheckResponse)
+	err := c.cc.Invoke(ctx, "/dogma.interop.v1.discover.DiscoverAPI/Check", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *discoverAPIClient) Watch(ctx context.Context, in *WatchRequest, opts ...grpc.CallOption) (DiscoverAPI_WatchClient, error) {
@@ -367,8 +503,23 @@ func (x *discoverAPIWatchClient) Recv() (*WatchResponse, error) {
 
 // DiscoverAPIServer is the server API for DiscoverAPI service.
 type DiscoverAPIServer interface {
+	// Check is a no-op that allows the client to check if the DiscoverAPI is
+	// implemented by a server without the need for the server to implement the
+	// gRPC reflection services.
+	//
+	// This is implemented as a separate operation to Watch() because Watch()
+	// returns a stream. A client requires at least one response to be received
+	// before it can definitively say that the method has been implemented, but
+	// it's possible that a successful and well-behaved call to Watch() never
+	// sends any responses.
+	Check(context.Context, *CheckRequest) (*CheckResponse, error)
 	// Watch starts watching the server for updates to the availability of Dogma
 	// applications.
+	//
+	// When the call is first made the client sends a response for each
+	// application that is currently available on the server. After this time the
+	// server sends a response each time the availability of a specific
+	// application changes.
 	Watch(*WatchRequest, DiscoverAPI_WatchServer) error
 }
 
@@ -376,12 +527,33 @@ type DiscoverAPIServer interface {
 type UnimplementedDiscoverAPIServer struct {
 }
 
+func (*UnimplementedDiscoverAPIServer) Check(context.Context, *CheckRequest) (*CheckResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Check not implemented")
+}
 func (*UnimplementedDiscoverAPIServer) Watch(*WatchRequest, DiscoverAPI_WatchServer) error {
 	return status.Errorf(codes.Unimplemented, "method Watch not implemented")
 }
 
 func RegisterDiscoverAPIServer(s *grpc.Server, srv DiscoverAPIServer) {
 	s.RegisterService(&_DiscoverAPI_serviceDesc, srv)
+}
+
+func _DiscoverAPI_Check_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CheckRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DiscoverAPIServer).Check(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dogma.interop.v1.discover.DiscoverAPI/Check",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DiscoverAPIServer).Check(ctx, req.(*CheckRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _DiscoverAPI_Watch_Handler(srv interface{}, stream grpc.ServerStream) error {
@@ -408,7 +580,12 @@ func (x *discoverAPIWatchServer) Send(m *WatchResponse) error {
 var _DiscoverAPI_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "dogma.interop.v1.discover.DiscoverAPI",
 	HandlerType: (*DiscoverAPIServer)(nil),
-	Methods:     []grpc.MethodDesc{},
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Check",
+			Handler:    _DiscoverAPI_Check_Handler,
+		},
+	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "Watch",

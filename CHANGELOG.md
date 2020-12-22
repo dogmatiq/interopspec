@@ -9,6 +9,12 @@ The format is based on [Keep a Changelog], and this project adheres to
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
 
+## [0.2.1] - 2020-12-22
+
+### Fixed
+
+- Fix package name of generated code in `discoverspec`
+
 ## [0.2.0] - 2020-12-20
 
 ### Changed

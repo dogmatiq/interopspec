@@ -1,7 +1,7 @@
 syntax = "proto3";
 package dogma.interop.v1.discover;
 
-option go_package = "github.com/dogmatiq/interopspec/presencespec";
+option go_package = "github.com/dogmatiq/interopspec/discoverspec";
 
 // DiscoverAPI is a service for discovering the applications hosted on a server.
 service DiscoverAPI {

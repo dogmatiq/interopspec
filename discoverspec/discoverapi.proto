@@ -18,10 +18,20 @@ service DiscoverAPI {
 message WatchApplicationsRequest {}
 
 message WatchApplicationsResponse {
-  // ApplicationKey is the identity key of the Dogma application that the
-  string application_key = 1;
+  // Identity is the identity key of the Dogma application that the response is
+  // about.
+  string identity = 1;
 
   // Available indicates whether the application should currently be considered
   // available or not.
   bool available = 2;
+}
+
+// Identity represents the identity of an application.
+message Identity {
+  // Name is the application's unique name.
+  string name = 1;
+
+  // Key is the application's immutable, unique key.
+  string key = 2;
 }

@@ -20,7 +20,7 @@ message WatchApplicationsRequest {}
 message WatchApplicationsResponse {
   // Identity is the identity key of the Dogma application that the response is
   // about.
-  string identity = 1;
+  Identity identity = 1;
 
   // Available indicates whether the application should currently be considered
   // available or not.

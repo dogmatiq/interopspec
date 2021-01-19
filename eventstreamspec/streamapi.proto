@@ -112,8 +112,8 @@ message NoRecognizedMediaTypes {
   string portable_name = 2;
 }
 
-// UnimplementedStartPointMechanism is an error-details value for UNIMPLEMENTED
-// errors that occurred because a client started consuming using a start point
-// mechanism that is not implemented by the server.
-message UnimplementedStartPointMechanism {
+// UnsupportedStartPoint is an error-details value for UNIMPLEMENTED errors that
+// occurred because a client started consuming using a start point specified in
+// a way that is not supported by the server.
+message UnsupportedStartPoint {
 }

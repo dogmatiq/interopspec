@@ -58,12 +58,12 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 <!-- references -->
 [Unreleased]: https://github.com/dogmatiq/interopspec
-[0.1.0]: https://github.com/dogmatiq/testkit/releases/tag/v0.1.0
-[0.2.0]: https://github.com/dogmatiq/testkit/releases/tag/v0.2.0
-[0.2.1]: https://github.com/dogmatiq/testkit/releases/tag/v0.2.1
-[0.3.0]: https://github.com/dogmatiq/testkit/releases/tag/v0.3.0
-[0.4.0]: https://github.com/dogmatiq/testkit/releases/tag/v0.4.0
-[0.5.0]: https://github.com/dogmatiq/testkit/releases/tag/v0.5.0
+[0.1.0]: https://github.com/dogmatiq/interopspec/releases/tag/v0.1.0
+[0.2.0]: https://github.com/dogmatiq/interopspec/releases/tag/v0.2.0
+[0.2.1]: https://github.com/dogmatiq/interopspec/releases/tag/v0.2.1
+[0.3.0]: https://github.com/dogmatiq/interopspec/releases/tag/v0.3.0
+[0.4.0]: https://github.com/dogmatiq/interopspec/releases/tag/v0.4.0
+[0.5.0]: https://github.com/dogmatiq/interopspec/releases/tag/v0.5.0
 
 <!-- version template
 ## [0.0.1] - YYYY-MM-DD

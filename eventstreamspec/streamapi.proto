@@ -67,6 +67,8 @@ message ConsumeResponse {
 }
 
 message EventTypesRequest {
+  // ApplicationKey is the identity key of the application to query.
+  string application_key = 1;
 }
 
 message EventTypesResponse {

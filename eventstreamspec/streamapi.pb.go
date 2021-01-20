@@ -809,6 +809,10 @@ type StreamAPIClient interface {
 	// stream, the server SHOULD keep the stream open and send new events as they
 	// are produced.
 	//
+	// If the start point is requested in a manner not supported by the server, it
+	// MUST return an UNIMPLEMENTED error with an attached UnsupportedStartPoint
+	// value.
+	//
 	// If the server does not host the application specified in the request, it
 	// MUST return a NOT_FOUND error with an attached UnrecognizedApplication
 	// value.
@@ -891,6 +895,10 @@ type StreamAPIServer interface {
 	// If the requested start point is beyond the end of the application's event
 	// stream, the server SHOULD keep the stream open and send new events as they
 	// are produced.
+	//
+	// If the start point is requested in a manner not supported by the server, it
+	// MUST return an UNIMPLEMENTED error with an attached UnsupportedStartPoint
+	// value.
 	//
 	// If the server does not host the application specified in the request, it
 	// MUST return a NOT_FOUND error with an attached UnrecognizedApplication

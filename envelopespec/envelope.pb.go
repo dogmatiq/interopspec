@@ -35,28 +35,37 @@ type Envelope struct {
 	MessageId string `protobuf:"bytes,1,opt,name=message_id,json=messageId,proto3" json:"message_id,omitempty"`
 	// CausationId is the ID of the message that was the direct cause of the
 	// message in this envelope.
+	//
+	// It is equal to MessageId if this message was not caused by any other.
 	CausationId string `protobuf:"bytes,2,opt,name=causation_id,json=causationId,proto3" json:"causation_id,omitempty"`
 	// CorrelationId is the ID of the first ancestor of the message in this
 	// envelope that was not caused by another message.
+	//
+	// It is equal to MessageId if this message was not caused by any other.
 	CorrelationId string `protobuf:"bytes,3,opt,name=correlation_id,json=correlationId,proto3" json:"correlation_id,omitempty"`
 	// SourceApplication is the identity of the Dogma application that produced
 	// the message in this envelope.
 	SourceApplication *Identity `protobuf:"bytes,4,opt,name=source_application,json=sourceApplication,proto3" json:"source_application,omitempty"`
 	// SourceHandler is the identity of the Dogma handler that produced the
-	// message in this envelope. It is the zero-value if the message was not
-	// produced by a handler.
+	// message in this envelope.
+	//
+	// It is the zero-value if the message was not produced by a handler.
 	SourceHandler *Identity `protobuf:"bytes,5,opt,name=source_handler,json=sourceHandler,proto3" json:"source_handler,omitempty"`
 	// SourceInstanceId is the ID of the aggregate or process instance that
-	// produced the message in this envelope. It is empty if the message was not
-	// produced by a handler, or it was produced by an integration handler.
+	// produced the message in this envelope.
+	//
+	// It is empty if the message was not produced by an aggregate or process
+	// handler.
 	SourceInstanceId string `protobuf:"bytes,6,opt,name=source_instance_id,json=sourceInstanceId,proto3" json:"source_instance_id,omitempty"`
 	// CreatedAt is the time at which the message was created, marshaled in
 	// RFC-3339 format, with nanoseconds.
 	CreatedAt string `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	// ScheduledFor is the time at which a timeout message is scheduled to be
 	// handled, marshaled in RFC-3339 format, with nanoseconds.
+	//
+	// It is empty for command and event messages.
 	ScheduledFor string `protobuf:"bytes,8,opt,name=scheduled_for,json=scheduledFor,proto3" json:"scheduled_for,omitempty"`
-	// Description is a human-readable description of the message.
+	// Description is an optional human-readable description of the message.
 	Description string `protobuf:"bytes,9,opt,name=description,proto3" json:"description,omitempty"`
 	// PortableName is the unique name used to identify messages of this type.
 	PortableName string `protobuf:"bytes,10,opt,name=portable_name,json=portableName,proto3" json:"portable_name,omitempty"`
@@ -64,6 +73,9 @@ type Envelope struct {
 	// binary message data.
 	MediaType string `protobuf:"bytes,11,opt,name=media_type,json=mediaType,proto3" json:"media_type,omitempty"`
 	// Data is the binary message data.
+	//
+	// The data format is described by MediaType, the allowed values of both are
+	// outside the scope of this specification.
 	Data []byte `protobuf:"bytes,12,opt,name=data,proto3" json:"data,omitempty"`
 }
 

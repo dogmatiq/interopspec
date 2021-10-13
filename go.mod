@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/kr/pretty v0.1.0 // indirect
-	github.com/onsi/ginkgo v1.16.4
+	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.16.0
 	google.golang.org/grpc v1.41.0
 	google.golang.org/protobuf v1.27.1

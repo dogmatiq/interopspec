@@ -20,6 +20,13 @@ message Envelope {
   // It is equal to MessageId if this message was not caused by any other.
   string correlation_id = 3;
 
+  // SourceSite is the (optional )ID of the site that the source application is
+  // running within.
+  //
+  // The site is used to disambiguate between messages from different
+  // installations of the same application.
+  Identity source_site = 13;
+
   // SourceApplication is the identity of the Dogma application that produced
   // the message in this envelope.
   Identity source_application = 4;

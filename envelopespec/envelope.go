@@ -28,6 +28,12 @@ func (e *Envelope) Validate() error {
 		return errors.New("correlation ID must not be empty")
 	}
 
+	if e.SourceSite != nil {
+		if err := checkIdentity(e.GetSourceSite()); err != nil {
+			return fmt.Errorf("site identity is invalid: %w", err)
+		}
+	}
+
 	if err := checkIdentity(e.GetSourceApplication()); err != nil {
 		return fmt.Errorf("application identity is invalid: %w", err)
 	}

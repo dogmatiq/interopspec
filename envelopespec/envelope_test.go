@@ -20,6 +20,10 @@ var _ = Describe("type Envelope", func() {
 				MessageId:     "<id>",
 				CausationId:   "<cause>",
 				CorrelationId: "<correlation>",
+				SourceSite: &Identity{
+					Name: "<site-name>",
+					Key:  "<site-key>",
+				},
 				SourceApplication: &Identity{
 					Name: "<app-name>",
 					Key:  "<app-key>",
@@ -43,6 +47,13 @@ var _ = Describe("type Envelope", func() {
 			Expect(err).ShouldNot(HaveOccurred())
 		})
 
+		It("does not return an error if the site is nil", func() {
+			env.SourceSite = nil
+
+			err := env.Validate()
+			Expect(err).ShouldNot(HaveOccurred())
+		})
+
 		It("returns an error if the message ID is empty", func() {
 			env.MessageId = ""
 
@@ -62,6 +73,20 @@ var _ = Describe("type Envelope", func() {
 
 			err := env.Validate()
 			Expect(err).Should(HaveOccurred())
+		})
+
+		It("returns an error if the source site name is empty", func() {
+			env.SourceSite.Name = ""
+
+			err := env.Validate()
+			Expect(err).To(MatchError("site identity is invalid: identity name must not be empty"))
+		})
+
+		It("returns an error if the source site key is empty", func() {
+			env.SourceSite.Key = ""
+
+			err := env.Validate()
+			Expect(err).To(MatchError("site identity is invalid: identity key must not be empty"))
 		})
 
 		It("returns an error if the source app name is empty", func() {

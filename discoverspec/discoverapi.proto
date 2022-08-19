@@ -12,7 +12,8 @@ service DiscoverAPI {
   // application that is currently available on the server. After this time the
   // server sends a response each time the availability of a specific
   // application changes.
-  rpc WatchApplications(WatchApplicationsRequest) returns (stream WatchApplicationsResponse);
+  rpc WatchApplications(WatchApplicationsRequest)
+      returns (stream WatchApplicationsResponse);
 }
 
 message WatchApplicationsRequest {}

@@ -48,7 +48,6 @@ message Application {
   repeated Handler handlers = 3;
 }
 
-
 // Handler is a message handler within an application.
 message Handler {
   // Identity is the handler's identity.

@@ -23,6 +23,13 @@ message WatchApplicationsResponse {
   // about.
   Identity identity = 1;
 
+  // SourceSite is the (optional) identity of the site that the application is
+  // running within.
+  //
+  // The site is used to disambiguate between messages from different
+  // installations of the same application.
+  Identity site = 3;
+
   // Available indicates whether the application should currently be considered
   // available or not.
   bool available = 2;

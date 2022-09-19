@@ -38,8 +38,8 @@ type Envelope struct {
 	//
 	// It is equal to MessageId if this message was not caused by any other.
 	CorrelationId string `protobuf:"bytes,3,opt,name=correlation_id,json=correlationId,proto3" json:"correlation_id,omitempty"`
-	// SourceSite is the (optional )ID of the site that the source application is
-	// running within.
+	// SourceSite is the (optional) identity of the site that the source
+	// application is running within.
 	//
 	// The site is used to disambiguate between messages from different
 	// installations of the same application.

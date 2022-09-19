@@ -20,8 +20,8 @@ message Envelope {
   // It is equal to MessageId if this message was not caused by any other.
   string correlation_id = 3;
 
-  // SourceSite is the (optional )ID of the site that the source application is
-  // running within.
+  // SourceSite is the (optional) identity of the site that the source
+  // application is running within.
   //
   // The site is used to disambiguate between messages from different
   // installations of the same application.

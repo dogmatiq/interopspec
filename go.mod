@@ -1,6 +1,6 @@
 module github.com/dogmatiq/interopspec
 
-go 1.17
+go 1.19
 
 require (
 	github.com/kr/pretty v0.1.0 // indirect

@@ -5,6 +5,8 @@ import (
 	"encoding/binary"
 	"encoding/hex"
 	"fmt"
+	"strconv"
+	"unicode/utf8"
 )
 
 // New returns a new randonly generated UUID.
@@ -67,7 +69,31 @@ func (x *UUID) ToString() string {
 func (x *UUID) Format(f fmt.State, verb rune) {
 	fmt.Fprintf(
 		f,
-		fmt.FormatString(f, verb),
+		formatString(f, verb),
 		x.ToString(),
 	)
+}
+
+// FormatString returns a string representing the fully qualified formatting
+// directive captured by the State, followed by the argument verb.
+//
+// It is a copy of the fmt.FormatString() function in Go v1.20, and may be
+// removed once this Go v1.19 support is dropped.
+func formatString(state fmt.State, verb rune) string {
+	var tmp [16]byte // Use a local buffer.
+	b := append(tmp[:0], '%')
+	for _, c := range " +-#0" { // All known flags
+		if state.Flag(int(c)) { // The argument is an int for historical reasons.
+			b = append(b, byte(c))
+		}
+	}
+	if w, ok := state.Width(); ok {
+		b = strconv.AppendInt(b, int64(w), 10)
+	}
+	if p, ok := state.Precision(); ok {
+		b = append(b, '.')
+		b = strconv.AppendInt(b, int64(p), 10)
+	}
+	b = utf8.AppendRune(b, verb)
+	return string(b)
 }

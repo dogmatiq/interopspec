@@ -2,30 +2,28 @@ syntax = "proto3";
 package dogma.interop.v1.eventstream;
 
 import "github.com/dogmatiq/interopspec/envelopespec/envelope.proto";
+import "github.com/dogmatiq/interopspec/wellknown/uuidpb/uuid.proto";
 
 option go_package = "github.com/dogmatiq/interopspec/eventstreamspec";
 
 // StreamAPI is a service for consuming offset-based ordered streams of event
 // messages.
 service StreamAPI {
-  // Consume starts consuming from a particular "start point" within an
-  // application's event stream.
-  //
-  // The start point can be specified using different mechanisms. If the server
-  // does not support the requested mechanism it MUST return an UNIMPLEMENTED
-  // error with an attached UnimplementedStartPointMechanism value.
+  // Streams list the streams that the server provides.
+  rpc Streams(StreamsRequest) returns (StreamsResponse);
+
+  // Consume starts consuming from a particular "start point" within an event
+  // stream.
   //
   // If the requested start point is beyond the end of the application's event
   // stream, the server SHOULD keep the stream open and send new events as they
   // are produced.
   //
-  // If the start point is requested in a manner not supported by the server, it
-  // MUST return an UNIMPLEMENTED error with an attached UnsupportedStartPoint
-  // value.
+  // If the requested start point is not supported by the server, it MUST return
+  // an UNIMPLEMENTED error with an attached UnsupportedStartPoint value.
   //
-  // If the server does not host the application specified in the request, it
-  // MUST return a NOT_FOUND error with an attached UnrecognizedApplication
-  // value.
+  // If the server does not provide the stream identified in the request, it
+  // MUST return a NOT_FOUND error with an attached UnrecognizedStream value.
   //
   // If any of the requested event types are not produced by the specified
   // application the server MUST return an INVALID_ARGUMENT error with an
@@ -45,9 +43,25 @@ service StreamAPI {
   rpc EventTypes(EventTypesRequest) returns (EventTypesResponse);
 }
 
+message StreamsRequest {}
+
+message StreamsResponse { repeated Stream streams = 1; }
+
+message Stream {
+  // ApplicationKey is the identity key of the Dogma application that the stream
+  // belongs to.
+  dogma.protobuf.UUID application_key = 1;
+
+  // StreamKey is a unique identifier for the stream within the application.
+  dogma.protobuf.UUID stream_key = 2;
+
+  // EventTypes is a list of the event types that may appended to the stream.
+  repeated EventType event_types = 3;
+}
+
 message ConsumeRequest {
   // ApplicationKey is the identity key of the application to consume from.
-  string application_key = 1;
+  dogma.protobuf.UUID application_key = 1;
 
   // EventTypes is a list of event types to be consumed.
   repeated EventType event_types = 2;
@@ -70,23 +84,13 @@ message ConsumeResponse {
   dogma.interop.v1.envelope.Envelope envelope = 2;
 }
 
-message EventTypesRequest {
-  // ApplicationKey is the identity key of the application to query.
-  string application_key = 1;
-}
-
-message EventTypesResponse {
-  // EventTypes is a list of event types supported by the server.
-  repeated EventType event_types = 1;
-}
-
 message EventType {
   // PortableName is a name that uniquely identifies the event type across
   // process boundaries.
   string portable_name = 1;
 
   // MediaTypes is the set of supported media-types that can be used to
-  // represents events of this type, in order of preference.
+  // represent events of this type, in order of preference.
   repeated string media_types = 2;
 }
 
@@ -95,7 +99,7 @@ message EventType {
 // the server.
 message UnrecognizedApplication {
   // ApplicationKey is the identity of the application that produced the error.
-  string application_key = 1;
+  dogma.protobuf.UUID application_key = 1;
 }
 
 // UnrecognizedEventType is an error-details value for INVALID_ARGUMENT errors

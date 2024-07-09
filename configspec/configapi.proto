@@ -71,6 +71,9 @@ message Handler {
   // The keys are the fully-qualified names of the message's Go type and the
   // value is the role that message plays within the application.
   map<string, MessageRole> consumed_messages = 5;
+
+  // IsDisabled indicates whether the handler is disabled.
+  bool is_disabled = 6;
 }
 
 // Identity represents the identity of an application or handler.

@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog], and this project adheres to
 [keep a changelog]: https://keepachangelog.com/en/1.0.0/
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 
+## [0.5.4] - 2024-07-16
+
+### Added
+
+- Added `configspec.Handler.IsDisabled` field
+
 ## [0.5.3] - 2023-06-12
 
 ### Added
@@ -20,13 +26,13 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 ### Added
 
-- Add `discoverspec.WatchApplicationsResponse.Site`
+- Added `discoverspec.WatchApplicationsResponse.Site`
 
 ## [0.5.1] - 2022-08-20
 
 ### Added
 
-- Add `envelopespec.Envelope.SourceSite`
+- Added `envelopespec.Envelope.SourceSite`
 
 ## [0.5.0] - 2021-01-20
 
@@ -37,7 +43,7 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 ### Fixed
 
-- Add missing `ApplicationKey` field to `eventstreamspec.EventTypesRequest`
+- Added missing `ApplicationKey` field to `eventstreamspec.EventTypesRequest`
 
 ## [0.4.0] - 2020-12-22
 
@@ -87,6 +93,7 @@ The format is based on [Keep a Changelog], and this project adheres to
 [0.5.1]: https://github.com/dogmatiq/interopspec/releases/tag/v0.5.1
 [0.5.2]: https://github.com/dogmatiq/interopspec/releases/tag/v0.5.2
 [0.5.3]: https://github.com/dogmatiq/interopspec/releases/tag/v0.5.3
+[0.5.4]: https://github.com/dogmatiq/interopspec/releases/tag/v0.5.4
 
 <!-- version template
 ## [0.0.1] - YYYY-MM-DD
